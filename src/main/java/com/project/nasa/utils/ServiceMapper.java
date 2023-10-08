@@ -25,6 +25,14 @@ public class ServiceMapper {
         projectDTO.setTitle(project.getTitle());
         projectDTO.setImg(project.getImg());
         projectDTO.setUrl(project.getUrl());
+        projectDTO.setDescription(project.getDescription());
+        projectDTO.setProject_goals(project.getProject_goals());
+        projectDTO.setEmail(project.getEmail());
+        projectDTO.setStatus(project.getStatus());
+        projectDTO.setStart_date(project.getStart_date());
+        projectDTO.setScistarter(project.getScistarter());
+        projectDTO.setGeographic_scope(project.getGeographic_scope());
+
 
         List<CategoryDTO> categoryDTOS = new ArrayList<>();
         for (Category category : project.getCategories()) {

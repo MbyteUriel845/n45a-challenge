@@ -28,4 +28,19 @@ public class ProjectDTO {
 
     private String url;
 
+    private String description;
+
+    private String project_goals;
+
+    private String email;
+
+    private String status;
+
+    private String start_date;
+
+    private String scistarter;
+
+    private String geographic_scope;
+
+
 }
