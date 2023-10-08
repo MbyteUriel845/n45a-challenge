@@ -1,5 +1,6 @@
 package com.project.nasa.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,7 @@ public class Category {
     private Long id;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Project> projects = new HashSet<>();
+    private List<Project> projects;
 
     private String name;
 }

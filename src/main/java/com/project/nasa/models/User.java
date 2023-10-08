@@ -1,5 +1,6 @@
 package com.project.nasa.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -53,10 +55,10 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     @ManyToMany(mappedBy = "users")
-    private Set<Skill> skills = new HashSet<>();
+    private List<Skill> skills;
 
     @ManyToMany(mappedBy = "users")
-    private Set<Project> projects = new HashSet<>();
+    private List<Project> projects ;
     public User() {}
 
     public User(String username, String email, String password) {
@@ -74,7 +76,7 @@ public class User {
         this.phone = phone;
     }
 
-    public User(Long id, String username, String name, String lastName, String phone, String email, String password, Set<Role> roles, Set<Skill> skills, Set<Project> projects) {
+    public User(Long id, String username, String name, String lastName, String phone, String email, String password, Set<Role> roles, List<Skill> skills, List<Project> projects) {
         this.id = id;
         this.username = username;
         this.name = name;
